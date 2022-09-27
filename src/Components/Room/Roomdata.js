@@ -1,0 +1,74 @@
+export const Roomdata=[
+
+    {
+        'Id':1,
+        'roomNumber':'200',
+        'adultCapacity':'3',
+        'childCapacity':'2',
+        'price':'200'
+    },
+    {
+        'Id':2,
+        'roomNumber':'201',
+        'adultCapacity':'2',
+        'childCapacity':'3',
+        'price':'300'
+    },
+    {
+        'Id':3,
+        'roomNumber':'202',
+        'adultCapacity':'3',
+        'childCapacity':'1',
+        'price':'400'
+    },
+    {
+        'Id':4,
+        'roomNumber':'203',
+        'adultCapacity':'2',
+        'childCapacity':'2',
+        'price':'500'
+    },
+    {
+        'Id':5,
+        'roomNumber':'203',
+        'adultCapacity':'2',
+        'childCapacity':'2',
+        'price':'500'
+    },
+    {
+        'Id':6,
+        'roomNumber':'203',
+        'adultCapacity':'2',
+        'childCapacity':'2',
+        'price':'500'
+    },
+    {
+        'Id':7,
+        'roomNumber':'203',
+        'adultCapacity':'2',
+        'childCapacity':'2',
+        'price':'500$'
+    },
+    {
+        'Id':8,
+        'roomNumber':'203'
+        ,'adultCapacity':'2',
+        'childCapacity':'2','price':'500$'},
+    {
+        'Id':9,
+        'roomNumber':'203',
+        'adultCapacity':'2',
+        'childCapacity':'2',
+        'price':'500'
+    },
+    {
+        'Id':10,
+        'roomNumber':'203',
+        'adultCapacity':'2',
+        'childCapacity':'2',
+        'price':'500'
+    }
+    
+
+
+]
