@@ -40,7 +40,7 @@ const Room = ({data}) => {
     <div className='roommain'>
       <div className='rmtitle'>
       <div className='h1'><h1>Rooms</h1></div>
-      <Button text='Add Room' btnclr='orange' color='white' Functionality={popuproom}/></div>
+      <Button text='Add Room' btnclr='skyblue' color='black' Functionality={popuproom}/></div>
       
       <div className='Rmtble'>
       <Roomtable roomData={roomData} setEditingId={setEditingId} setAddroom={setAddroom} setDeleteingId={setDeleteingId}/>

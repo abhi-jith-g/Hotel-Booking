@@ -25,15 +25,14 @@
       "price": "6000",
       "amenities": [],
       "id": 4
+    },
+    {
+      "roomNumber": "105",
+      "adultCapacity": "2",
+      "childCapacity": "2",
+      "price": "10000",
+      "amenities": [],
+      "id": 5
     }
-  ],
-  "bookings":[{
-    "guestLastName": "jith",
-      "guestFirstName": "Abhi",
-      "roomNumber": "103",
-      "checkIn": "02/03/2022",
-      "CheckOut": "04/04/2022",
-      "status": 4
-
-  }]
+  ]
 }

@@ -22,7 +22,7 @@ const Booking = ({data}) => {
 
         </div>
         <div className='booking-searchbar'>
-        <InputComponent text='Type Guess Name'/>
+        <InputComponent text='Type Guest Name'/>
         <InputComponent text='Any Status'/>
         <Button  text='Search' btnclr="#ffa500" color="#ffffff"/>
 
