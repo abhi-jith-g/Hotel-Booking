@@ -16,12 +16,12 @@ const   NewBooking = () => {
     checkInDate:"",
     checkOutDate:"",
     numberOfAdults:"",
-    numberOfChildren:""
+    numberOfChild:""
     
   });
   const [rooms,setRoom] =  useState(null)  
 
-  const{guestFirstName,guestLastName,checkInDate,checkOutDate,numberOfAdults,numberOfChildren}=NewBookingData
+  const{guestFirstName,guestLastName,checkInDate,checkOutDate,numberOfAdults,numberOfChild}=NewBookingData
   
   const onChange=(value,key)=>{
    if(rooms)return 
@@ -83,7 +83,7 @@ const   NewBooking = () => {
           <InputComponent text='Check In Date'type='date' value={checkInDate} setState={(value)=>onChange(value,"checkInDate")} />
           <InputComponent text='Check Out Date'type='date' value={checkOutDate} setState={(value)=>onChange(value,"checkOutDate")} />
           <InputComponent text='Number of Adults'type='number' value={numberOfAdults} setState={(value)=>onChange(value,"numberOfAdults")}/>
-          <InputComponent text='Number of Children'type='Number' value={numberOfChildren} setState={(value)=>onChange(value,"numberOfChildren")} />
+          <InputComponent text='Number of Children'type='Number' value={numberOfChild} setState={(value)=>onChange(value,"numberOfChild")} />
           <div className="buttons">
           <div className='btn1'>
       
