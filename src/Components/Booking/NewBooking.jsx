@@ -8,7 +8,7 @@ import apiCall from '../../Services/apiCall'
 
 
 
-const   NewBooking = () => {
+const   NewBooking = ({data}) => {
 
   const [NewBookingData, setNewBookingData] = useState({
     guestFirstName:"",
@@ -35,6 +35,9 @@ const   NewBooking = () => {
  
 
     const [Booknow, setBooknow] = useState(false)
+    const [showroom,setShowroom]=useState(false)
+    const [booking,setBooking]=useState(null)
+    // const [checkStatus,setCheckstatus]=useState(null)
     const navigate=useNavigate()
 
     const BookingData = async(e)=>{
@@ -43,23 +46,35 @@ const   NewBooking = () => {
       let res = await addBooking();
 
     }
-
-    const addBooking=()=>apiCall("/booking","POST",{...formatBooking(),roomId:rooms.id,status:"Booked"});
+    
+    const addBooking=()=>apiCall("/booking","POST",{...formatBooking(),roomId:rooms.id,status:rooms.status});
     const getRooms =()=>apiCall("/get-rooms","POST",formatBooking())
+    const updateStatus=(status)=>apiCall("/booking","PUT",{id:booking.id,status})
+
+
     const getAvailablerooms= async()=>{
       let room = await getRooms();
       if(room.id){
         setRoom(room);
-        setGetAvailableroom(true)
+        setGetAvailableroom(true);
+        setShowroom(true)
       }
     }
+    // const Checkin=async()=>{
+    //   let booking = await getBooking();
+    //   if(booking.id){
+    //     setBooking
+    //   }
+    // }
 
     const [GetAvailable,setGetAvailableroom] = useState(false)
 
 
     const book= async()=>{
       const booking = await addBooking();
+      setBooking(booking)
       console.log(booking);
+      setBooknow(true)
     }
     const formatBooking=()=>{
       return {
@@ -68,12 +83,13 @@ const   NewBooking = () => {
         checkoutDate: new Date(NewBookingData.checkOutDate).toISOString(),
       }
     }
-
+    
   return (
     <div className='13'>
       <div className='new-booking-main'>
         <div className='new-booking-text'> 
-        <h1>New Booking {guestFirstName+" "+guestLastName}</h1>
+        <h3>New Booking {guestFirstName+" "+guestLastName}</h3>
+        
 
         </div>
         {/* <form action='' onSubmit={BookingData}> */}
@@ -100,15 +116,25 @@ const   NewBooking = () => {
             </div> 
             </div> : ""}
           </div>
+          {
+            showroom&& 
+            (<div className='showroom'>
+              <label style={{fontWeight:600}}>Available room:</label>{rooms.roomNumber}
+              <label  style={{fontWeight:600}}>Price:</label>{rooms.price}
+              </div>
+            )
+          }
+          
           {Booknow ? 
           <div className='btn2'>
-          <div><Button text='Check In' btnclr='white' color='orange' border='1px solid orange'/></div>
-          <div><Button text='Check Out' btnclr='white' color='orange' border='1px solid orange'/></div>
+          <div><Button text='Check In' btnclr='white' color='orange' border='1px solid orange' Functionality={()=>{
+            updateStatus("Checked In");}}/></div>
+          <div><Button text='Check Out' btnclr='white' color='orange' border='1px solid orange' Functionality={()=>{
+            updateStatus("Checked Out");}}/></div>
           <div><Button text='Cancel' btnclr='white' color='orange' border='1px solid orange'/></div>
           </div> : ""
           }
 
-          
           
         </div>
         </div>
